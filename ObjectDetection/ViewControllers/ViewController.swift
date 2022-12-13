@@ -98,25 +98,33 @@ class ViewController: UIViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
            if keyPath == "outputVolume"{
                let audioSession = AVAudioSession.sharedInstance()
-               if audioSession.outputVolume > audioLevel {
+               
+               if audioSession.outputVolume > 0.999 {
+                   //AudioServicesPlaySystemSound(1151);
                    AudioServicesPlaySystemSound(1117);
+               }
+               
+               if audioSession.outputVolume < 0.001 {
+                  // AudioServicesPlaySystemSound(1152);
+                   AudioServicesPlaySystemSound(1118);
+               }
+               
+               
+               if audioSession.outputVolume > audioLevel {
+                   //AudioServicesPlaySystemSound(1117);
+                   AudioServicesPlaySystemSound(1151);
                    audioLevel = audioSession.outputVolume
                    startObjectDetection = true
                }
                if audioSession.outputVolume < audioLevel {
-                   AudioServicesPlaySystemSound(1118);
+                   //AudioServicesPlaySystemSound(1118);
+                   AudioServicesPlaySystemSound(1152);
                    audioLevel = audioSession.outputVolume
                    startObjectDetection = false
                }
                
              
-               if audioSession.outputVolume > 0.999 {
-                   AudioServicesPlaySystemSound(1151);
-               }
-               
-               if audioSession.outputVolume < 0.001 {
-                   AudioServicesPlaySystemSound(1152);
-               }
+
            }
        }
     
@@ -392,15 +400,15 @@ extension ViewController: CameraFeedManagerDelegate {
         if ((category.label != nil) && ( lastobject != category.label ) && (!self.synthesizer.isSpeaking)) {
            self.lastobject = category.label ?? ""
            
-            var description = self.lastobject // = AVSpeechUtterance(string: (self.lastobject))
+            var description = self.lastobject
             if (location == 2) {
-                description = description + "on the right"
+                description = description + " on the right"
             }
             else if (location == 1) {
-                description = description + "on the left"
+                description = description + " on the left"
             }
             else {
-                description = description + "in the middle"
+                description = description + " in the middle"
             }
            let utterance = AVSpeechUtterance(string: description)
            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")

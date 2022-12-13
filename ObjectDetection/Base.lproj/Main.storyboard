@@ -73,9 +73,10 @@
                                             <constraint firstAttribute="height" constant="60" id="ZtV-QY-HAp"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vora-logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Bf-dy-7bF">
-                                        <rect key="frame" x="61" y="60" width="314" height="227"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vora-logo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Bf-dy-7bF">
+                                        <rect key="frame" x="56" y="64" width="281" height="242"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -539,7 +540,7 @@ ryWBJYYliSWLJY0ljyWWJZglmkPMQ9FD4EPkQ+9D90QERBFEJkQrRC9EMUQzRDVEPkRDRElEUURTRFVE
 V0RZVflV/lYLVg5WG1YgVihWK1YwVjgAAAAAAAACAQAAAAAAAABoAAAAAAAAAAAAAAAAAABWOw
 </mutableData>
         </image>
-        <image name="vora-logo" width="498" height="501"/>
+        <image name="vora-logo" width="166" height="167"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
